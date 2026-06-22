@@ -1,13 +1,13 @@
 cask "tungsten-edge" do
-  version "0.1.0"
-  sha256 "3f7d4276afda8e616709736d6a38f1ec15ad2ed7d44561b27f2815eceeaef3b6"
+  version "0.1.1"
+  sha256 "3c1606e3aed036ba5df6ce98cbc3e30321b814450e5e1cfd38567042625d93c7"
 
   url "https://github.com/moonbai-studio/tungsten-edge/releases/download/v#{version}/Tungsten-Edge-#{version}.zip"
   name "Tungsten Edge"
   desc "以「窗口」为单位的 macOS 底部任务条，替代系统程序坞"
   homepage "https://github.com/moonbai-studio/tungsten-edge"
 
-  depends_on macos: :sonoma
+  depends_on macos: :monterey
 
   app "Tungsten Edge.app"
 
