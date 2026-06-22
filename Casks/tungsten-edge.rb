@@ -7,7 +7,7 @@ cask "tungsten-edge" do
   desc "以「窗口」为单位的 macOS 底部任务条，替代系统程序坞"
   homepage "https://github.com/moonbai-studio/tungsten-edge"
 
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Tungsten Edge.app"
 
