@@ -1,6 +1,6 @@
 cask "tungsten-edge" do
-  version "0.6.0"
-  sha256 "a2342ce95248ff95e84407456af53bed2e636fac8f6f0e4e006ef50ba578bf95"
+  version "0.6.5"
+  sha256 "359803f397164535384b94c1aa48a9174e17c5ef1fe1096f899f4887dd18a325"
 
   url "https://github.com/moonbai-studio/tungsten-edge/releases/download/v#{version}/Tungsten-Edge-#{version}.zip"
   name "Tungsten Edge"
