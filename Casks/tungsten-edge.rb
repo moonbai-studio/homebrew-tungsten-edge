@@ -1,11 +1,13 @@
 cask "tungsten-edge" do
-  version "0.7.7"
-  sha256 "a909ebc3d0a8756056966aa11bdb2c0702059f36f310e44daf970cb930b23478"
+  version "0.8.0"
+  sha256 "3ed428d85324ec036e8fa41a2e37fa7fe026378781ed343b0ac3ad0fa51802ff"
 
-  url "https://github.com/moonbai-studio/tungsten-edge/releases/download/v#{version}/Tungsten-Edge-#{version}.zip"
+  # 2026-08-13 起编译好的包只在官网发布，GitHub 只保留源码，
+  # release 页面不再附带 zip——所以这里必须指向官网，不能指回 GitHub。
+  url "https://tungstenedge.app/download/Tungsten-Edge-#{version}.zip"
   name "Tungsten Edge"
   desc "以「窗口」为单位的 macOS 底部任务条，替代系统程序坞"
-  homepage "https://github.com/moonbai-studio/tungsten-edge"
+  homepage "https://tungstenedge.app"
 
   depends_on macos: :monterey
 
