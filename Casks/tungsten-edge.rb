@@ -1,6 +1,6 @@
 cask "tungsten-edge" do
-  version "0.8.0"
-  sha256 "3ed428d85324ec036e8fa41a2e37fa7fe026378781ed343b0ac3ad0fa51802ff"
+  version "0.9.0"
+  sha256 "13162d7ae2a587c42fac0bfb111df00dd8b857bf41f408b1d85dcd999cee7891"
 
   # 2026-08-13 起编译好的包只在官网发布，GitHub 只保留源码，
   # release 页面不再附带 zip——所以这里必须指向官网，不能指回 GitHub。
@@ -11,13 +11,20 @@ cask "tungsten-edge" do
 
   depends_on macos: :monterey
 
+  # 钨极从这一版起自带 Sparkle 自动更新。不声明的话，用户被 Sparkle 升到新版之后
+  # brew 仍以为装的是 cask 里写的版本，`brew upgrade` 会把它降级重装回去。
+  auto_updates true
+
   app "Tungsten Edge.app"
 
   caveats <<~EOS
-    Tungsten Edge 尚未签名公证。若首次打开被系统拦截，在「应用程序」里
-    右键（Control+点击）→ 打开，或运行：
-      xattr -dr com.apple.quarantine "/Applications/Tungsten Edge.app"
+    Tungsten Edge 已通过 Apple 签名与公证，双击即可打开，无需右键放行。
+
     首次运行需在「系统设置 → 隐私与安全性 → 辅助功能」中授权。
+
+    从 0.8.0 或更早版本升级：0.9.0 换成了正式的开发者签名，旧的辅助功能
+    授权不再生效。请先退出钨极，在辅助功能列表里选中旧的 Tungsten Edge
+    条目、点「−」删掉，再重新打开并按引导重新授权。只需做这一次。
   EOS
 
   zap trash: [
