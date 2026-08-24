@@ -1,6 +1,6 @@
 cask "tungsten-edge" do
-  version "0.9.5"
-  sha256 "931550c5b3e50d8a0f06503aa43fa4450cec10977e6670ad0e8be489d0ed5de6"
+  version "0.9.6"
+  sha256 "367e3a15c9f1ec430e1bd09f9adbaa612b5caa5e0315bdac7581d3eae3ff054b"
 
   # 2026-08-13 起编译好的包只在官网发布，GitHub 只保留源码，
   # release 页面不再附带 zip——所以这里必须指向官网，不能指回 GitHub。
