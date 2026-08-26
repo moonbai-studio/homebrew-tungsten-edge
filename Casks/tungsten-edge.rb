@@ -9,7 +9,14 @@ cask "tungsten-edge" do
   desc "以「窗口」为单位的 macOS 底部 Dock 栏，替代系统程序坞"
   homepage "https://tungstenedge.app"
 
-  depends_on macos: :monterey
+  # Homebrew 5.1.11 起裸符号才表示「及以上」，之前表示「仅此版本」——
+  # 老 brew 会在 macOS 13+ 上拒绝安装（issue #17）。新 brew 不能用字符串写法：
+  # 那会触发弃用警告（并叫用户来 tap 提 issue），开发者模式下还会直接报错。
+  if Gem::Version.new(HOMEBREW_VERSION.split("-").first) >= Gem::Version.new("5.1.11")
+    depends_on macos: :monterey
+  else
+    depends_on macos: ">= :monterey"
+  end
 
   # 钨极从这一版起自带 Sparkle 自动更新。不声明的话，用户被 Sparkle 升到新版之后
   # brew 仍以为装的是 cask 里写的版本，`brew upgrade` 会把它降级重装回去。
